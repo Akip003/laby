@@ -27,7 +27,7 @@ double pierwiastek(double a, double b)
 double potegowanie(double a, double b)
 {
 	double wynik = 1.00;
-	
+
 	if (b > 0 && (int)b - b == 0)
 		for (int i = 0; i < b; i++)
 		{
@@ -38,9 +38,9 @@ double potegowanie(double a, double b)
 	else if (b < 0 && (int)b - b == 0)
 	{
 		b *= (-1.00);
-		wynik= (double)1.00/(double)potegowanie(a, b);
-		std::cout<<"wynik w zmiennej " << wynik << std::endl;
-		
+		wynik = (double)1.00 / (double)potegowanie(a, b);
+		std::cout << "wynik w zmiennej " << wynik << std::endl;
+
 	}
 	else if ((int)b - b != 0)
 	{
@@ -51,10 +51,10 @@ double potegowanie(double a, double b)
 			mianownik *= 10;
 		}
 		double temp = potegowanie(a, b);
-		wynik = pierwiastek(temp,mianownik);
-		
-		
-		
+		wynik = pierwiastek(temp, mianownik);
+
+
+
 	}
 	else
 	{
@@ -63,6 +63,12 @@ double potegowanie(double a, double b)
 	}
 	return wynik;
 }
+double eksponenta(double a)
+{
+	double e = 2.718281828459;
+	return pow(e, a);
+
+}
 int main()
 {
 	while (true)
@@ -70,7 +76,7 @@ int main()
 		std::cout << "PODAJ DWIE LICZBY: \n";
 		double a, b;
 		std::cin >> a >> b;
-		std::cout << "WYBIERZ DZIALANIE \n 1.dodawanie \n 2.odejmowanie \n 3.mnozenie \n 4.dzielenie \n 5.potegowanie \n 6.pierwiastek \n";
+		std::cout << "WYBIERZ DZIALANIE \n 1.dodawanie \n 2.odejmowanie \n 3.mnozenie \n 4.dzielenie \n 5.potegowanie \n 6.pierwiastek \n 7.eksponenta a \n";
 		int menu;
 		double wynik;
 		std::cin >> menu;
@@ -113,12 +119,17 @@ int main()
 			wynik = pierwiastek(a, b);
 		}
 		break;
+		case 7:
+		{
+			wynik = eksponenta(a);
+		}
+		break;
 		default:
 			std::cout << "do tego znaku nie przypisano zadnego dzialania";
 			return 1;
 			break;
 		}
-		std::cout << "wynik dzialania jest rowny " << wynik<<std::endl<<std::endl;
+		std::cout << "wynik dzialania jest rowny " << wynik << std::endl << std::endl;
 		std::cout << "czy chcesz kontynuowac?[y/n]";
 		char kontynuuj = _getch();
 		if (kontynuuj != 'y')
