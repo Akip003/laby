@@ -7,7 +7,7 @@ int main()
 	std::cout << "nacisnij klawisz \n";
 	int a;
 	a = _getch();
-	std::cout << a<<std::endl;
+	//std::cout << a<<std::endl;
 	
 	if (a >= 97 && a <= 122)
 		std::cout << "mala litera";
