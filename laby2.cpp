@@ -114,7 +114,31 @@ void prog5()
 int main()
 {
 	
-	prog5();
+	std::cout << "ktory program chcesz wybrac?";
+	int n;
+	std::cin >> n;
+	switch (n)
+	{
+	case 1:
+		prog1();
+		break;
+	case 2:
+		prog2();
+		break;
+	case 3:
+		prog3();
+		break;
+	case 4:
+		prog4();
+		break;
+	case 5:
+		prog5();
+		break;
+
+	default:
+		std::cout << "podano zla wartosc";
+		break;
+	};
 	
 
 	return 0;
