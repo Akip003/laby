@@ -25,7 +25,7 @@ int main()
 		{
 			std::cout << tab[i]<<"\n";
 		}
-		int srednia = licznik / (n + 1);
+		int srednia = licznik /n;
 		std::cout << "srednia wynosi " << srednia << std::endl;
 
 		int wariancja = 0;
@@ -33,7 +33,7 @@ int main()
 		{
 			wariancja += sqrt(tab[n] - srednia);
 		}
-		wariancja = wariancja / (n + 1);
+		wariancja = wariancja /n;
 		int odchylenie = sqrt(wariancja);
 		std::cout << "odchylenie standardowe wynosi " << odchylenie<<std::endl;
 
