@@ -133,5 +133,5 @@ int main()
 
 	std::cout << "posortowana tablica:\n";
 	wyswietl(n, tab);
-		
+		//naprawic odchylenie stadnardowe
 }
