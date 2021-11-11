@@ -30,13 +30,16 @@ void avg(int &n, int &licznik, float &srednia)
 }
 void odchylenie(int &n,int tab[],float srednia)
 {
-	float wariancja=0;
+	double wariancja=0;
 	for (int i = 0; i < n; i++)
 	{
-		wariancja += sqrt(tab[n] - srednia);
+		wariancja += pow(tab[i] - srednia,2);
+		
 	}
+	
 	wariancja = wariancja / n;
-	float odchylenie = sqrt(wariancja);
+	
+	double odchylenie = sqrt(wariancja);
 	std::cout << "odchylenie standardowe wynosi " << odchylenie << std::endl;
 }
 void odwrot_plus_5(int tab[], int &n)
@@ -122,6 +125,7 @@ int main()
 	avg(n, licznik, srednia);
 	
 	odchylenie(n, tab, srednia);
+	
 
 	odwrot_plus_5(tab, n);
 
@@ -133,5 +137,5 @@ int main()
 
 	std::cout << "posortowana tablica:\n";
 	wyswietl(n, tab);
-		//naprawic odchylenie stadnardowe
+		
 }
