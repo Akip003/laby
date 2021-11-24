@@ -78,34 +78,25 @@ void sprawdz(int tab[], int n)
 	}
 	if (jest != 1)
 	{
-		std::cout << "liczby nie ma w tabeli";
+		std::cout << "liczby nie ma w tabeli\n";
 	}
 }
 
 void sort(int tab[], int &n)
 {
 	
-	for (int i = 0; i < n; i++)
+	int pom, j;
+	for (int i =1; i <n; i++)
 	{
-		int max = tab[i];
-		int index=i;
-		
-		
-		for (int j = i+1; j < n; j++)
+		pom = tab[i];
+		j = i - 1;
+
+		while (j >=0 && tab[j] <pom)
 		{
-			if (tab[j] > max)
-			{
-				max=tab[j];
-				index = j;
-				
-			}
+			tab[j+1] = tab[j];
+			--j;
 		}
-		
-		if (max != i)
-		{
-			tab[index] = tab[i];
-			tab[i] = max;
-		}
+		tab[j + 1] = pom;
 	}
 }
 
@@ -126,7 +117,7 @@ int main()
 	
 	odchylenie(n, tab, srednia);
 	
-
+	std::cout << "odwrocenie tabeli po dodaiu 5 do kazdego elementu:\n";
 	odwrot_plus_5(tab, n);
 
 	wyswietl(n, tab);
