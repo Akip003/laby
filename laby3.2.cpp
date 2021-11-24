@@ -19,33 +19,40 @@ void get_pesel(int tab[])
 void sprawdz_poprawnosc(int tab[])
 {
 	int wynik=0;
-	int x = 1;
-	int y = 2;
+	
 	for (int i = 0; i < 10; i++)
 	{
-		int a = tab[i]*x;
-		wynik += a;
-		switch (x)
+		int w = i + 1;
+		int waga = 0;
+		switch (w)
 		{
-			case 1:
-				x == 3;
-				break;
-			case 3:
-				x == 7;
-				break;
-			case 7:
-				x == 9;
-				break;
-			case 9:
-				x == 1;
-				break;
-
+		case 1:
+		case 5:
+		case 9:
+		//case 11:
+			waga = 1;
+			break;
+		case 2:
+		case 6:
+		case 10:
+			waga = 3;
+			break;
+		case 3:
+		case 7:
+			waga = 7;
+			break;
+		case 4:
+		case 8:
+			waga = 9;
 		}
-		
+		wynik += (tab[i] * waga)%10;
 
+		
 	}
-	wynik += tab[10];
-	if ((wynik % 10) != 0)
+	wynik = wynik % 10;
+	wynik = 10 - wynik;
+	
+	if (wynik != tab[10])
 	{
 		std::cout << "pesel niepoprawny";
 		exit(1);
