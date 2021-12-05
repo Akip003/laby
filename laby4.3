@@ -1,7 +1,7 @@
 #include<iostream>
+int dl = 4;
 
-
-void tablica(int dl, char*& tablica)
+void tablica( char*& tablica)
 {
 
 	tablica = new char[dl];
@@ -17,17 +17,17 @@ int l_elem(char tab[])
 	}
 	return n;
 }
-int l_puste(char tab[],int dl)
+int l_puste(char tab[])
 {
 	return(dl - l_elem(tab));
 	
 }
-void powieksz(char tab[],int &dl)
+void powieksz(char tab[])
 {
-	if (l_puste(tab,dl) == 0)
+	if (l_puste(tab) == 0)
 	{
 		dl *= 2;
-		tablica(dl, tab);
+		tablica(tab);
 	}
 	
 }
@@ -57,14 +57,14 @@ void usun(char tab[], int e)
 
 int main()
 {
-	int dl = 8;
+	
 	
 	char* tab;
-	tablica(dl, tab);
+	tablica(tab);
 	
 	while (true)
 	{
-		powieksz(tab, dl);
+		powieksz(tab);
 		std::cout << "co chcesz zrobic?\n1.dodaj element\n2.wyswielt tablice\n3.podaj ilosc elementow\n4.podaj ilosc wolnych miejsc\n5.usun wybrany element\n";
 		int x;
 		std::cin >> x;
@@ -76,13 +76,13 @@ int main()
 		case 2:
 			std::cout << "elementy tablicy: \n";
 			wyswietl(tab);
-			std::cout <<"\n============\n";
+			std::cout << "\n============\n";
 			break;
 		case 3:
 			std::cout << "liczba elementow wynosi " << l_elem(tab) << "\n";
 			break;
 		case 4:
-			std::cout << "liczba pustych miejsc wynosi " << l_puste(tab,dl) << "\n";
+			std::cout << "liczba pustych miejsc wynosi " << l_puste(tab) << "\n";
 			break;
 		case 5:
 			int element;
@@ -91,6 +91,8 @@ int main()
 			usun(tab, element);
 			break;
 		}
-		
-
 	}
+
+
+	return 0;
+}
