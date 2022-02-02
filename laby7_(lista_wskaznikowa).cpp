@@ -111,12 +111,12 @@ int main()
 {
 	lista* baza = new lista;
 
-	baza->dodaj("maciej", "pierwszy", 23);
-	baza->dodaj("arkadiusz", "drugi", 44);
-	baza->dodaj("dariusz", "trzeci", 19);
-	baza->dodaj("andrzej", "czwarty", 21);
-	baza->dodaj("Jozek", "piaty", 22);
-	baza->dodaj("twoj", "stary", 91);
+	baza->dodaj("banan", "aaaa", 23);
+	baza->dodaj("kiwi", "bbbb", 44);
+	baza->dodaj("jablko", "ccccccc", 19);
+	baza->dodaj("gruszka", "dddddd", 21);
+	baza->dodaj("malina", "eeeee", 22);
+	baza->dodaj("zzzz", "fffffff", 91);
 
 	baza->wyswietl();
 	baza->usun(3);
